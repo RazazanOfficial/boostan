@@ -14,7 +14,7 @@
 
 :root {
   --c1: #37fa38;
-  --c2: #062e01;
+  --c2: #094b00;
   --c3: #061b08;
   --c4: #e6f4ea;
   --c5: #00bfa5;
@@ -25,6 +25,7 @@ body {
   background-color: var(--c4);
   font-family: "Yekan";
   direction: rtl;
+  overflow-x: hidden;
 }
 * {
   padding: 0;
