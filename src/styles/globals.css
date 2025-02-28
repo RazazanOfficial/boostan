@@ -27,8 +27,16 @@ body {
   direction: rtl;
   overflow-x: hidden;
 }
-* {
+*,
+div {
+  cursor: url(/icons/cursor-d.svg), auto;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+button,
+a,
+li,
+input {
+  cursor: pointer;
 }

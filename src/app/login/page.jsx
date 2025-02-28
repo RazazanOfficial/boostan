@@ -1,14 +1,49 @@
 "use client";
 import { TypewriterEffectSmooth } from "@/components/TextEffect";
 import { useState } from "react";
+// import {Link} from 
 import "@/styles/login.css";
-import { GraduationCap, Users, Building, Key } from "lucide-react";
+import {
+  GraduationCap,
+  Users,
+  Building,
+  Key,
+  DownloadIcon,
+  MegaphoneIcon,
+  Link2,
+} from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const page = () => {
   const [isActive, setIsActive] = useState("students");
-  const [selectedAnnouncement, setSelectedAnnouncement] = useState("");
+
+  const Header = () => {
+    return (
+      <header className="flex items-center justify-between p-4 mb-5">
+        <nav>
+          <ul className="flex">
+            <li className="px-2">
+              <a href="#">صفحه نخست</a>
+            </li>
+            <li className="px-2">
+              <a href="#">گالری تصاوویر</a>
+            </li>
+            <li className="px-2">
+              <a href="#">اخبار اطلاعیه ها</a>
+            </li>
+            <li className="px-2">
+              <a href="#">فرم های دانشجویی</a>
+            </li>
+            <li className="px-2">
+              <a href="#">معاونت دانشجویی</a>
+            </li>
+          </ul>
+        </nav>
+        <TypewriterEffectSmooth />
+      </header>
+    );
+  };
 
   const tabs = [
     {
@@ -37,42 +72,71 @@ const page = () => {
       id: 1,
       title: "تمدید مهلت انتخاب واحد",
       content:
-        "به اطلاع دانشجویان می‌رساند مهلت انتخاب واحد تا ۱۵ اسفند تمدید شد.",
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+      linkTitle: "دانلود فایل",
+      links: ["https://university.example.com/registration"],
     },
     {
       id: 2,
       title: "برنامه امتحانات نیمسال دوم",
       content:
-        "برنامه امتحانات نیمسال دوم از طریق پورتال آموزشی قابل مشاهده است.",
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+      linkTitle: ["دانلود فایل", "دانلود فایل"],
+      links: [
+        "https://university.example.com/exams",
+        "https://university.example.com/schedule",
+      ],
+    },
+    {
+      id: 3,
+      title: "برنامه امتحانات نیمسال سوم",
+      content:
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+      linkTitle: ["دانلود فایل", "دانلود فایل"],
+      links: [
+        "https://university.example.com/exams",
+        "https://university.example.com/schedule",
+      ],
+    },
+    {
+      id: 4,
+      title: "برنامه امتحانات نیمسال چهارم",
+      content:
+        "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.",
+      linkTitle: ["دانلود فایل", "دانلود فایل"],
+      links: [
+        "https://university.example.com/exams",
+        "https://university.example.com/schedule",
+      ],
     },
   ];
-  // const Header = () => {
-  //   return (
-  //     <header className="flex items-center justify-between p-4 mb-5">
-  //       <nav>
-  //         <ul className="flex">
-  //           <li className="px-2">
-  //             <Link href="#">صفحه نخست</Link>
-  //           </li>
-  //           <li className="px-2">
-  //             <Link href="#">گالری تصاوویر</Link>
-  //           </li>
-  //           <li className="px-2">
-  //             <Link href="#">اخبار اطلاعیه ها</Link>
-  //           </li>
-  //           <li className="px-2">
-  //             <Link href="#">فرم های دانشجویی</Link>
-  //           </li>
-  //           <li className="px-2">
-  //             <Link href="#">معاونت دانشجویی</Link>
-  //           </li>
-  //         </ul>
-  //       </nav>
-  //       <TypewriterEffectSmooth />
-  //     </header>
-  //   );
-  // };
-
+  const topLinks = [
+    {
+      id: 1,
+      linkTitle: "سامانه پهلوان",
+      href: "http://sport.shahroodut.ac.ir/",
+    },
+    {
+      id: 2,
+      linkTitle: "سامانه گلستان",
+      href: "https://golestan.shahroodut.ac.ir/home/Default.htm",
+    },
+    {
+      id: 3,
+      linkTitle: "دانشگاه صنعتی شاهرود",
+      href: "https://shahroodut.ac.ir/fa/",
+    },
+    {
+      id: 4,
+      linkTitle: "صندوق رفاه دانشجویان",
+      href: "https://swf.ir/fa",
+    },
+    {
+      id: 5,
+      linkTitle: "وزارت علوم، تحقیقات و فناوری",
+      href: "https://www.msrt.ir/fa",
+    },
+  ];
   const StudentsForm = () => {
     return (
       <form
@@ -319,25 +383,86 @@ const page = () => {
   };
 
   const Announcements = () => {
-    const activeAnnouncement = announcements.find(
-      (a) =>
-        a.id ===
-        (isActive === "students" ? 1 : isActive === "parents" ? 2 : null)
-    );
+    // const activeAnnouncement = announcements.find(
+    //   (a) =>
+    //     a.id ===
+    //     (isActive === "students" ? 1 : isActive === "parents" ? 2 : null)
+    // );
 
     return (
-      <div className="w-full px-4 py-5 bg-white shadow-md rounded-xl">
-        <h2 className="text-xl font-bold text-green-700 mb-4">
+      <div className="w-full px-4 py-5 bg-white shadow-md rounded-xl mb-7">
+        <h2 className="text-xl font-bold text-red-700 mb-4">
           آخرین اطلاعیه‌ها
         </h2>
         <ul>
           {announcements.map((announcement) => (
             <li
               key={announcement.id}
-              onClick={() => setIsActive(announcement.id)}
-              className="cursor-pointer text-blue-700 hover:underline mb-2"
+              onClick={() => {
+                setIsActive(`announcement-${announcement.id}`);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className={`flex gap-2 cursor-pointer text-red-900 hover:underline mb-2 px-4 py-3 rounded-lg duration-300 ${
+                isActive === `announcement-${announcement.id}`
+                      ? "bg-red-200 text-red-800 font-bold shadow-md"
+                      : "hover:bg-red-100 hover:text-red-700 hover:font-bold"
+              }`}
             >
+              <span>
+                <MegaphoneIcon />
+              </span>
               {announcement.title}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  const AnnouncementDetails = ({ title, content, links, linkTitle }) => (
+    <div className="flex flex-col bg-white shadow-lg rounded-2xl p-8 space-y-6 space-x-2 w-full mx-auto">
+      <h2 className="text-2xl font-bold text-red-700 mb-4 text-center">
+        {title}
+      </h2>
+      <p className="text-gray-700 mb-4">{content}</p>
+      <hr className="border-t border-gray-300 my-4" />
+      <h2 className="text-2xl font-bold text-red-700 mb-4">
+        پیوند های اطلاعیه
+      </h2>
+      <ul className="flex gap-5 pl-5">
+        {links.map((link, index) => (
+          <li key={index}>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-between gap-2 bg-red-600 text-white p-2 rounded-lg hover:bg-red-800 transition no-underline"
+            >
+              {Array.isArray(linkTitle) ? linkTitle[index] : linkTitle}
+              <span>
+                <DownloadIcon />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const TopLinks = () => {
+    return (
+      <div className="w-full px-4 py-5 bg-white shadow-md rounded-xl mb-7">
+        <h2 className="text-xl font-bold text-sky-700 mb-4">مهمترین پیوندها</h2>
+        <ul>
+          {topLinks.map((link) => (
+            <li
+              key={link.id}
+              className="flex gap-2 cursor-pointer text-blue-700 hover:underline mb-2 pr-4 py-3 rounded-lg duration-300"
+            >
+              <span>
+                <Link2 />
+              </span>
+              <a href={link.href} target="_blank" className="w-full"> {link.linkTitle} </a>
             </li>
           ))}
         </ul>
@@ -348,20 +473,21 @@ const page = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <header className="w-full h-full my-5">
+        {/* <Header/> */}
         <TypewriterEffectSmooth key={isActive} />
       </header>
       <main className="flex flex-col md:flex-row items-start justify-center w-full py-8 pr-6 my-8 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 shadow-xl">
         <section className="w-1/3">
           <div className="w-full px-4 py-5 bg-white shadow-md rounded-xl mb-7">
-            <ul className="space-y-2">
+            <ul className="space-y-2 ">
               {tabs.map((tab) => (
                 <li
                   key={tab.id}
                   onClick={() => setIsActive(tab.id)}
-                  className={`flex items-center cursor-pointer px-4 py-3 rounded-lg text-gray-700 transition duration-300 ${
+                  className={`flex items-center cursor-pointer px-4 py-3 rounded-lg text-green-900 transition duration-300 ${
                     isActive === tab.id
                       ? "bg-green-200 text-green-800 font-bold shadow-md"
-                      : "hover:bg-green-100 hover:text-green-700"
+                      : "hover:bg-green-100 hover:text-green-700 hover:font-bold"
                   }`}
                 >
                   <span className="ml-2">{tab.icon}</span>
@@ -371,12 +497,20 @@ const page = () => {
             </ul>
           </div>
           <Announcements />
+          <TopLinks />
         </section>
         <section className="container mx-6">
           <div className="container h-auto p-6 rounded-xl bg-slate-100 shadow-md">
-            {(isActive === 1 && announcements[0].content) ||
-              (isActive === 2 && announcements[1].content) ||
-              (isActive === "students" && <StudentsForm />)}
+            {announcements.map(
+              (announcement) =>
+                isActive === `announcement-${announcement.id}` && (
+                  <AnnouncementDetails
+                    key={announcement.id}
+                    {...announcement}
+                  />
+                )
+            )}
+            {isActive === "students" && <StudentsForm />}
             {isActive === "parents" && <ParentsForm />}
             {isActive === "departments" && <DepartmentsForm />}
             {isActive === "forgotPassword" && <ForgotPasswordForm />}
