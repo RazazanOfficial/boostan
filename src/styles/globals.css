@@ -4,10 +4,10 @@
 
 @font-face {
   font-family: "Yekan";
-  src: url("/font/Yekan.eot");
-  src: url("/font/Yekan.eot?#iefix") format("embedded-opentype"),
-    url("/font/Yekan.woff") format("woff"),
-    url("/font/Yekan.ttf") format("truetype");
+  src: url("../assets/font/Yekan.eot");
+  src: url("../assets/font/Yekan.eot?#iefix") format("embedded-opentype"),
+    url("../assets/font/Yekan.woff") format("woff"),
+    url("../assets/font/Yekan.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,7 @@ body {
 }
 *,
 div {
-  cursor: url(/icons/cursor-d.svg), auto;
+  cursor: url(../assets/icons/cursor-d.svg), auto;
   padding: 0;
   margin: 0;
   box-sizing: border-box;

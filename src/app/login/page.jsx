@@ -1,5 +1,7 @@
 "use client";
 import { TypewriterEffectSmooth } from "@/components/TextEffect";
+import eitaIcon from '@/assets/icons/eitaa.svg';
+import soroushIcon from '@/assets/icons/Soroush-color.png';
 import { useState } from "react";
 // import {Link} from 
 import "@/styles/login.css";
@@ -358,7 +360,7 @@ const page = () => {
           className="flex items-center justify-start cursor-pointer bg-orange-100 text-orange-700 p-2 rounded-lg hover:bg-orange-200 gap-2 w-72"
           onClick={() => copyToClipboard("eitaa.com/st_sut")}
         >
-          <img src="/icons/eitaa.svg" alt="Eitaa Icon" className="w-5 h-5" />
+          <img src='https://s6.uupload.ir/files/eitaa_5u8t.png' alt="Eitaa Icon" className="w-5 h-5" />
           <p className="font-bold underline text-sm">eitaa.com/st_sut</p>
           <p className="font-bold text-sm">(برای کپی کلینک کنید.)</p>
         </div>
@@ -366,7 +368,7 @@ const page = () => {
           className="flex items-center justify-center space-x-2 cursor-pointer bg-blue-100 text-blue-700 p-2 rounded-lg hover:bg-blue-200 gap-2 w-72"
           onClick={() => copyToClipboard("splus.ir/st_sut")}
         >
-          <img src="/icons/Soroush.svg" alt="Splus Icon" className="w-5 h-5" />
+          <img src='https://s6.uupload.ir/files/soroush_sqf3.png' alt="Splus Icon" className="w-5 h-5" />
           <p className="font-bold underline text-sm">splus.ir/st_sut</p>
           <p className="font-bold text-sm">(برای کپی کلینک کنید.)</p>
         </div>
